@@ -1,0 +1,7 @@
+.venv
+node_modules
+__pycache__
+*lock*
+test.py
+*.env*
+/.git

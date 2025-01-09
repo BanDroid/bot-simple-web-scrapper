@@ -2,7 +2,9 @@
 
 Bot discord untuk web scrapping sederhana.
 
-Ready made install for your discord server: <a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1325523244404445184"><img width="100" height="80" src="https://cdn.simpleicons.org/discord/5865F2" alt="discord.svg" /></a>
+Click image below to install for your discord server:
+
+<a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1325523244404445184"><img width="100" height="80" src="https://cdn.simpleicons.org/discord/5865F2" alt="discord.svg" /></a>
 
 > **_NOTE:_** Tidak dapat bypass captcha atau eksekusi javascript.
 

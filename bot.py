@@ -35,7 +35,7 @@ async def scrapper_get(
     selector="body",
     attributes="innerHTML",
     *,
-    template: str = "```html\n$1```",
+    template: str = "```html\n$1\n```",
 ):
     if not url:
         await context.reply("URL tidak boleh kosong ya...")

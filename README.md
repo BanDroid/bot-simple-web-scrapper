@@ -2,6 +2,8 @@
 
 Bot discord untuk web scrapping sederhana.
 
+Ready made install for your discord server: [![discord installation](https://cdn.simpleicons.org/discord/5865F2)](https://discord.com/oauth2/authorize?client_id=1325523244404445184)
+
 > **_NOTE:_** Tidak dapat bypass captcha atau eksekusi javascript.
 
 ## Environment Variables

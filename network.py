@@ -1,9 +1,6 @@
 import aiohttp
 from aiohttp.resolver import AsyncResolver
 
-resolver = AsyncResolver(nameservers=["1.1.1.1", "1.0.0.1"])
-conn = aiohttp.TCPConnector(resolver=resolver)
-
 
 async def http_get(url: str) -> tuple[bool, str]:
     """
@@ -15,6 +12,8 @@ async def http_get(url: str) -> tuple[bool, str]:
     Returns:
         tuple[bool, str]: First item is Error (bool) and second item is Data as string (str).
     """
+    resolver = AsyncResolver(nameservers=["1.1.1.1", "1.0.0.1"])
+    conn = aiohttp.TCPConnector(resolver=resolver)
     async with aiohttp.ClientSession(connector=conn) as session:
         async with session.get(url) as response:
             if not response.ok or response.status != 200:

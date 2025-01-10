@@ -19,6 +19,6 @@ async def http_get(url: str) -> tuple[bool, str]:
             if not response.ok or response.status != 200:
                 return (
                     True,
-                    f"Sorry, cannot processing request from URL {url} with status {response.status} and message below\n```bash\n{await response.text()}```",
+                    f"Sorry, cannot processing request from URL {url} with status {response.status} and message below:\n\n{await response.text()}",
                 )
             return (False, await response.text())

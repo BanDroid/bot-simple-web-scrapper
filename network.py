@@ -1,4 +1,8 @@
 import aiohttp
+from aiohttp.resolver import AsyncResolver
+
+resolver = AsyncResolver(nameservers=["1.1.1.1", "1.0.0.1"])
+conn = aiohttp.TCPConnector(resolver=resolver)
 
 
 async def http_get(url: str) -> tuple[bool, str]:
@@ -11,11 +15,11 @@ async def http_get(url: str) -> tuple[bool, str]:
     Returns:
         tuple[bool, str]: First item is Error (bool) and second item is Data as string (str).
     """
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession(connector=conn) as session:
         async with session.get(url) as response:
             if not response.ok or response.status != 200:
                 return (
                     True,
-                    f"Mohon maaf, tidak dapat mengambil data dari URL {url} karena status {response.status} dengan pesan \n```bash\n{await response.text()}```",
+                    f"Sorry, cannot processing request from URL {url} with status {response.status} and message below\n```bash\n{await response.text()}```",
                 )
             return (False, await response.text())

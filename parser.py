@@ -32,7 +32,7 @@ class BsParser:
                 if attr == "innerText" or attr == "text":
                     data[f"${i+1}"] = element.get_text()
                 elif attr == "innerHTML":
-                    data[f"${i+1}"] = "".join(str(x) for x in element.contents)
+                    data[f"${i+1}"] = "".join(str(x) for x in element)
                 else:
                     data[f"${i+1}"] = element.get(attr, "")
             self.results.append(data)

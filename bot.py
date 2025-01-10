@@ -46,12 +46,12 @@ async def scrapper_get(
     await context.send(f"Processing the page...\n```yaml\nURL: {url}```")
 
     output_template = f" ".join(template.splitlines()[1:-1])
-    error_http, response_str = await http_get(url)
-    if error_http:
+    is_error_http, response_str = await http_get(url)
+    if is_error_http:
         await send_message_as_file(
             context=context,
             message="There was unexpected error processing requests:",
-            file_content=error_http,
+            file_content=response_str,
             user_id=context.author.id,
         )
         return
